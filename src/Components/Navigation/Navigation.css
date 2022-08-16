@@ -1,0 +1,8 @@
+.navigation {
+  
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
