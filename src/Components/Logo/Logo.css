@@ -1,0 +1,11 @@
+.logo {
+  text-align: center;
+}
+
+.Tilt {
+  background: linear-gradient(89deg, #ff5edf, #04cdde);
+}
+
+.Tilt .Tilt-inner img {
+  padding-top: 5px;
+}
