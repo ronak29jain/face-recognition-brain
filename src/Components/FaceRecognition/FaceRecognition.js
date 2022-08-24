@@ -4,7 +4,7 @@ function FaceRecognition() {
   return (
     <div>
       <p>
-        FaceRecognition
+        <img src="https://samples.clarifai.com/face-det.jpg" alt="face-detetcition" />
       </p>
     </div>
   )

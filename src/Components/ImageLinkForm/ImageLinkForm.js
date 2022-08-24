@@ -8,6 +8,15 @@ function ImageLinkForm() {
   const detectface = () => {
     console.log(imgurl)
     console.log('click')
+    // console.log('1a4df659bc044d49a9b4694f10841250')
+    // app.models.predict("1a4df659bc044d49a9b4694f10841250","https://samples.clarifai.com/face-det.jpg").then(
+    //   funtion(response) {
+    //     console.log(response);
+    //   },
+    //   function(err){
+    //     console.log("face detection error:....", err)
+    //   }
+    // );
   }
 
   return (
