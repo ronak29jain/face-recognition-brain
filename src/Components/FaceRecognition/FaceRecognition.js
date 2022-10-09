@@ -1,11 +1,17 @@
 import React from 'react'
+import './FaceRecognition.css'
 
-function FaceRecognition() {
+function FaceRecognition({image, box}) {
   return (
-    <div>
-      <p>
-        <img src="https://samples.clarifai.com/face-det.jpg" alt="face-detetcition" />
-      </p>
+    <div className='center ma' >
+      {
+        image 
+          ? <div className='absolute mt2'>
+              <img id='input_image' src={image} alt="face-detetcition" height="300px" />
+              <div className='bounding-box' style={{top: box.topRow, bottom: box.bottomRow, left: box.leftCol ,right: box.rightCol}} ></div>
+            </div>
+          : null
+      }
     </div>
   )
 }
