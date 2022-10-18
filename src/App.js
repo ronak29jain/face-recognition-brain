@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import './App.css';
-import Navigation from './components/Navigation/Navigation'
-import Logo from './components/Logo/Logo';
-import Rank from './components/Rank/Rank';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
-import Signin from './components/SignIn/Signin';
-import Register from './components/Register/Register';
+import Navigation from './Components/Navigation/Navigation'
+import Logo from './Components/Logo/Logo';
+import Rank from './Components/Rank/Rank';
+import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
+import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
+
+import Signin from './Components/SignIn/Signin';
+import Register from './Components/Register/Register';
+
 
 function App() {
 
