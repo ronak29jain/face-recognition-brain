@@ -62,8 +62,8 @@ function App() {
       "user_app_id": {
         // "user_id": process.env.REACT_APP_CLARIFAI_USER_ID,
         // "app_id": process.env.REACT_APP_CLARIFAI_APP_ID
-        "user_id": ronak29jain,
-        "app_id": face-recognition-brain
+        "user_id": "ronak29jain",
+        "app_id": "face-recognition-brain"
       },
       "inputs": [
           {
