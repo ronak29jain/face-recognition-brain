@@ -86,7 +86,7 @@ function App() {
         .then(result => {
           if(result) {
             displayFaceBox(calculateFaceLocation(result))
-            fetch('http://localhost:3000/image', {
+            fetch('https://floating-forest-21789.herokuapp.com/image', {
               method: 'Put',
               headers: {
                 'Content-Type':'application/json'
