@@ -60,8 +60,10 @@ function App() {
     setImage(input)
     const raw = JSON.stringify({
       "user_app_id": {
-        "user_id": process.env.REACT_APP_CLARIFAI_USER_ID,
-        "app_id": process.env.REACT_APP_CLARIFAI_APP_ID
+        // "user_id": process.env.REACT_APP_CLARIFAI_USER_ID,
+        // "app_id": process.env.REACT_APP_CLARIFAI_APP_ID
+        "user_id": ronak29jain,
+        "app_id": face-recognition-brain
       },
       "inputs": [
           {
@@ -78,7 +80,8 @@ function App() {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Authorization': `Key ${process.env.REACT_APP_CLARIFAI_API_KEY}`
+            // 'Authorization': `Key ${process.env.REACT_APP_CLARIFAI_API_KEY}`
+            'Authorization': `Key 1a4df659bc044d49a9b4694f10841250`
         },
         body: raw
     };
