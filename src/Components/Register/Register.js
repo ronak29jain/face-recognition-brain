@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-function Register({setRoute, setUser, changeRoute}) {
+function Register({ changeRoute }) {
   
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
   const registerUser = () => {
+    setError('')
     const credentials = {
       email: email,
       name: name,
@@ -20,20 +22,20 @@ function Register({setRoute, setUser, changeRoute}) {
     })
       .then(response => response.json())
       .then(user => {
-        // console.log(user);
-        
-        // setRoute('home');
-        // setUser(user);
-
-        changeRoute('home', user)
-
+        if (user?.email === email) {
+          changeRoute('home', user)
+        } else {
+          setError(user)
+        }
       })
+      .catch(console.log())
   }
 
   return (
     <div>
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
+          {/* <form action='' method="post"> */}
             <div className="measure">
               <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                 <legend className="f1 fw6 ph0 mh0">Register</legend>
@@ -74,14 +76,17 @@ function Register({setRoute, setUser, changeRoute}) {
                     required
                   />
                 </div>
+                <div className='white'>
+                  {error && error}
+                </div>
               </fieldset>
               <div className="">
                 <input onClick={registerUser} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Register"/>
               </div>
               <div className="lh-copy mt3">
-                {/* <a href="#0" className="f6 link dim black db">Register</a> */}
               </div>
             </div>
+          {/* </form> */}
         </main>
       </article>
     </div>

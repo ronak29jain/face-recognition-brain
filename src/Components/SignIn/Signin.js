@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Signin({ setRoute, setIsSignedIn, setUser, changeRoute}) {
+function Signin({ changeRoute }) {
   
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -21,25 +21,20 @@ function Signin({ setRoute, setIsSignedIn, setUser, changeRoute}) {
       .then(response => response.json())
       .then( data => {
         if (data?.email === email) {
-          // console.log(data)
-
-          // setUser(data)
-          // setRoute('home')
-          // setIsSignedIn('true');
-
           changeRoute('home', data)
         }
         else {
           setError(data)
-          // console.log("Fail to login, User email or password doesn't match")
         }
       })
+      .catch(console.log())
   }
   
   return (
     <div>
       <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
+          {/* <form action='' method="post"> */}
             <div className="measure">
               <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                 <legend className="f1 fw6 ph0 mh0">Sign In</legend>
@@ -79,6 +74,7 @@ function Signin({ setRoute, setIsSignedIn, setUser, changeRoute}) {
                 <a onClick={() => changeRoute('register')} href="#0" className="f6 link dim black db">Register</a>
               </div>
             </div>
+          {/* </form> */}
         </main>
       </article>
     </div>

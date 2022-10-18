@@ -42,18 +42,15 @@ function App() {
       setInput(initialState.input)
       setImage(initialState.image)
       setIsSignedIn(initialState.isSignedIn)
-      console.log('State Reseted')
     }
     if (route === 'home') {
       setUser(data);
       setIsSignedIn(true);
-      console.log('State Seted')
     }
     setRoute(route)
   }
 
   const onInputChange = (event) => {
-    // console.log('onInputChange: ',event.target.value)
     setInput(event.target.value)
   }
 
@@ -61,8 +58,8 @@ function App() {
     setImage(input)
     const raw = JSON.stringify({
       "user_app_id": {
-        "user_id": "ronak29jain",
-        "app_id": "face-recognition-brain"
+        "user_id": process.env.REACT_APP_CLARIFAI_USER_ID,
+        "app_id": process.env.REACT_APP_CLARIFAI_APP_ID
       },
       "inputs": [
           {
@@ -108,14 +105,12 @@ function App() {
             .catch(err => console.log('error in updating entires'))
           }
         })
-        .catch(error => console.log('clarify error'));
+        .catch(err => console.log('clarify error'));
       
   }
 
   const calculateFaceLocation = (result) => {
     const face = result.outputs[0].data.regions[0].region_info.bounding_box
-    // console.log("result: ", result)
-    // console.log("face: ", face)
     const image = document.getElementById('input_image')
     const width = Number(image.width)
     const height = Number(image.height)
@@ -129,20 +124,12 @@ function App() {
 
   const displayFaceBox = (box) => {
     setFaceBox(box)
-    // console.log('box',box)
-    // console.log('facebox',faceBox)
   }
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/')
-  //     .then(response => response.json())
-  //     .then(console.log)
-  // })
 
   return (
     <div className="App">
       {/* <Particles /> */}
-      <Navigation changeRoute={changeRoute} isSignedIn={isSignedIn}/>
+      <Navigation changeRoute={changeRoute} isSignedIn={isSignedIn} />
       {
         route === 'home'
           ? <div className="home">
@@ -153,8 +140,8 @@ function App() {
           </div>
           : (
             route === 'signin'
-              ? <Signin setRoute={setRoute} setIsSignedIn={setIsSignedIn} setUser={setUser} changeRoute={changeRoute}/>
-              : <Register setRoute={setRoute} changeRoute={changeRoute} />
+              ? <Signin changeRoute={changeRoute}/>
+              : <Register changeRoute={changeRoute} />
           )
       }
     </div>
