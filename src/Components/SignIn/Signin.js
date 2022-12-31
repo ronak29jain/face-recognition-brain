@@ -13,7 +13,7 @@ function Signin({ changeRoute }) {
       password: password
     }
 
-    fetch('https://floating-forest-21789.herokuapp.com/signin', {
+    fetch('http://13.231.132.155/api/face-recognition-brain-api/signin', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials)

@@ -15,7 +15,7 @@ function Register({ changeRoute }) {
       password: password
     }
 
-    fetch('https://floating-forest-21789.herokuapp.com/register', {
+    fetch('http://13.231.132.155/api/face-recognition-brain-api/register', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials)
@@ -76,7 +76,7 @@ function Register({ changeRoute }) {
                     required
                   />
                 </div>
-                <div className='white'>
+                <div className='gold b'>
                   {error && error}
                 </div>
               </fieldset>

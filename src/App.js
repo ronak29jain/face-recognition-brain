@@ -91,7 +91,7 @@ function App() {
         .then(result => {
           if(result) {
             displayFaceBox(calculateFaceLocation(result))
-            fetch('https://floating-forest-21789.herokuapp.com/image', {
+            fetch('http://13.231.132.155/api/face-recognition-brain-api/image', {
               method: 'Put',
               headers: {
                 'Content-Type':'application/json'
